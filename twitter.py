@@ -37,18 +37,22 @@ def follow(screen_name):
 def validate_res(res):
     print 'OK' if res.status_code == 200 else "Error: %d" % res.status_code
 
-if sys.argv[1] == 'tweet':
-    tweet(sys.argv[2])
-elif sys.argv[1] == 'tweet_image':
-    tweet_image(sys.argv[2], sys.argv[3])
-elif sys.argv[1] == 'tweet_phallus':
-    flickr.get_image('phallus')
-    tweet_image('Phallus', 'phallus.jpg')
-elif sys.argv[1] == 'delete':
-    delete(sys.argv[2])
-elif sys.argv[1] == 'print_user_timeline':
-    print_user_timeline(sys.argv[2])
-elif sys.argv[1] == 'get_friends':
-    get_friends(sys.argv[2])
-elif sys.argv[1] == 'follow':
-    follow(sys.argv[2])
+def main():
+    if sys.argv[1] == 'tweet':
+        tweet(sys.argv[2])
+    elif sys.argv[1] == 'tweet_image':
+        tweet_image(sys.argv[2], sys.argv[3])
+    elif sys.argv[1] == 'tweet_phallus':
+        flickr.get_image('phallus')
+        tweet_image('Phallus', 'phallus.jpg')
+    elif sys.argv[1] == 'delete':
+        delete(sys.argv[2])
+    elif sys.argv[1] == 'print_user_timeline':
+        print_user_timeline(sys.argv[2])
+    elif sys.argv[1] == 'get_friends':
+        get_friends(sys.argv[2])
+    elif sys.argv[1] == 'follow':
+        follow(sys.argv[2])
+
+if __name__ == '__main__':
+    main()
